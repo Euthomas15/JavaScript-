@@ -77,3 +77,82 @@ const updatedProfile = {
 // Prove the original object remains unchanged
 console.log("Original Profile:", userProfile);
 console.log("Updated Profile:", updatedProfile);
+
+
+
+
+// 4. Template Literals
+
+const firstName = "Fatima"; // I Declare a variable for the name which show me an error because I already declared a variable with the same name in the destructuring section. To fix this, I can rename the variable to avoid conflicts.
+const age = 24;
+
+// Rewrite the introduction using a template literal
+const intro = `My name is ${firstName} and I am ${age} years old.`;
+
+console.log(intro);
+
+// Calculate the area of a rectangle
+const width = 8;
+const height = 5;
+
+const area = width * height;
+
+const rectangleMessage = `The area of the rectangle is ${area}`;
+
+console.log(rectangleMessage);
+
+
+
+// 5. Array Methods
+
+const products = [
+  { name: "Laptop", price: 450000, inStock: true },
+  { name: "Mouse", price: 8000, inStock: true },
+  { name: "Monitor", price: 120000, inStock: false },
+  { name: "Keyboard", price: 15000, inStock: true }
+];
+
+// Get an array containing only product names
+const productNames = products.map((product) => product.name);
+
+console.log("Product Names:", productNames);
+
+// Get only products that are in stock
+const inStockProducts = products.filter((product) => product.inStock);
+
+console.log("In-Stock Products:", inStockProducts);
+
+// Get uppercase names of only in-stock products
+const availableProductNames = products
+  .filter((product) => product.inStock)
+  .map((product) => product.name.toUpperCase());
+
+console.log("Available Product Names:", availableProductNames);
+
+
+
+// 6. Ternary & Logical &&
+
+const role = "editor";
+const cartItems = 0;
+
+// This Code block determines access level using nested ternary operators
+const accessLevel =
+  role === "admin"
+    ? "Full Access"
+    : role === "editor"
+      ? "Edit Access"
+      : role === "viewer"
+        ? "Read Only"
+        : "No Access";
+
+console.log("Access Level:", accessLevel);
+
+// Test logical AND
+console.log(cartItems && "View Cart");
+
+// Because cartItems is 0, which is falsy,
+// the expression returns 0 instead of "View Cart".
+
+// Fix: show "View Cart" only when items exist
+console.log(cartItems > 0 && "View Cart");
